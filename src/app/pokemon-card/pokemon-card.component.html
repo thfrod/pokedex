@@ -1,0 +1,14 @@
+<div class="pokemon-card">
+  <span class="pokemon-id">#{{ pokemon.id }}</span>
+  <h2 class="card-title">{{ pokemon.name }}</h2>
+  <img
+    class="pokemon-img"
+    [src]="
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+      pokemon.id +
+      '.png'
+    "
+    [alt]="'Imagem frontal do pokemon ' + pokemon.name"
+  />
+  <p class="card-subtitle">{{ typeList.join(" | ") }}</p>
+</div>
