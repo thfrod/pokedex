@@ -12,9 +12,13 @@
     </mat-form-field>
   </div>
   <div class="pokemon-list" [ngBusy]="busy$">
-    <app-pokemon-card
-      [pokemon]="pokemon"
-      *ngFor="let pokemon of pokemonListFiltered"
-    ></app-pokemon-card>
+    <ng-container *ngIf="pokemonListFiltered.length">
+      <app-pokemon-card
+        [pokemon]="pokemon"
+        *ngFor="let pokemon of pokemonListFiltered"
+      ></app-pokemon-card>
+    </ng-container>
+
+    <p *ngIf="!pokemonListFiltered.length">Nenhum pokemon encontrado.</p>
   </div>
 </div>

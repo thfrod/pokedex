@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
   }
 
   protected filterList() {
-    if (!this.pokemonSearch && this.pokemonSearch.length == 0) {
+    if (!this.pokemonSearch && !this.pokemonSearch.length) {
       this.pokemonListFiltered = this.pokemonList;
       return;
     }
